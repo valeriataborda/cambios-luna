@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+<body class="d-flex justify-content-center align-items-center">
+    <main class="container flex-column h-100 d-flex justify-content-center align-items-center my-2">
+
+        <!-- crear constructora -->
+        <h2 class="mt-5">CREAR CONSTRUCTORA</h2>
+        <form class="w-50">
+            <div class="form-group">
+                <label for="nombre-comercial">Nombre Comercial</label>
+                <input type="text" class="form-control" id="nombre-comercial" placeholder="Nombre comercial">
+            </div>
+            <div class="form-group">
+                <label for="razon-social">Razon Social</label>
+                <input type="text" class="form-control" id="razon-social" placeholder="Razon Social">
+            </div>
+            <div class="form-group">
+                <label for="nit">NIT</label>
+                <input type="text" class="form-control" id="nit" placeholder="Nit">
+            </div>
+            <div style="margin-top: 1rem;">
+                <button class="btn btn-primary" id="create-constructora">Crear Constructora</button>
+            </div>
+        </form>
+
+        <!-- crear proyecto -->
+        <h2 class="mt-5">CREAR PROYECTO</h2>
+        <form class="w-50">
+            <div class="form-group">
+                <label for="constructora">Nombre Constructora</label>
+                <select name="constructora" class="form-control" id="get-constructora">
+                    <option value="">Selecciona una opcion</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="nombre-proyecto">Nombre Proyecto</label>
+                <input type="text" class="form-control" id="nombre-proyecto" placeholder="Nombre Proyecto">
+            </div>
+            <div class="form-group">
+                <label for="unicacion">Ubicacion</label>
+                <input type="text" class="form-control" id="ubicacion" placeholder="Ubicacion">
+            </div>
+            <div class="form-group">
+                <label for="direccion">Direccion</label>
+                <input type="text" class="form-control" id="direccion" placeholder="Direccion">
+            </div>
+            <div style="margin-top: 1rem;">
+                <button class="btn btn-primary" id="create-proyect">Crear</button>
+            </div>
+        </form>
+
+
+        <!-- crear trazabilidad -->
+        <h2 class="mt-5">CREAR TRAZABILIDAD</h2>
+        <form class="w-50">
+            <div class="form-group">
+                <label for="get-proyecto">Proyecto</label>
+                <select name="proyecto" class="form-control" id="get-proyecto-tracking">
+                    <option value="">Selecciona una opcion</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="image-tracking">Imagen tracking</label>
+                <input type="file" class="form-control" id="image-tracking">
+            </div>
+            <div class="form-group">
+                <label for="observacion">Observacion</label>
+                <textarea class="form-control" id="observation"></textarea>
+            </div>
+            <div style="margin-top: 1rem;">
+                <button class="btn btn-primary" id="create-tracking">Crear</button>
+            </div>
+        </form>
+
+        <!-- crear apartamento -->
+        <h2 class="mt-5">CREAR APARTAMENTO</h2>
+        <form class="w-50">
+            <div class="form-group">
+                <label for="proyecto">Comprador</label>
+                <select name="proyecto" class="form-control" id="get-comprador">
+                    <option value="">Selecciona una opcion</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="proyecto">Proyecto</label>
+                <select name="proyecto" class="form-control" id="get-proyecto-apartamento">
+                    <option value="">Selecciona una opcion</option>
+                </select>
+            </div>
+            <div>
+                <label for="tamaño">tamaño</label>
+                <input type="text" class="form-control" id="tamaño" placeholder="tamaño">
+            </div>
+            <div>
+                <label for="piso">piso</label>
+                <input type="text" class="form-control" id="piso" placeholder="piso">
+            </div>
+            <div>
+                <label for="tipo">tipo</label>
+                <select name="" id="type-apartament">
+                    <option value="TRADICIONAL">TRADICIONAL</option>
+                    <option value="SUIT">SUIT</option>
+                    <option value="PREMIUM">PREMIUM</option>
+                </select>
+            </div>
+            <div>
+                <label for="precio">precio</label>
+                <input type="text" class="form-control" id="precio" placeholder="precio">
+            </div>
+            <div style="margin-top: 1rem;">
+                <button class="btn btn-primary" id="create-apartament">Crear</button>
+            </div>
+        </form>
+        <!-- crear Venta -->
+        <h2 class="mt-5">CREAR VENTA</h2>
+        <form class="w-50">
+            <div class="form-control" id="get-asesor"></div>
+            <div class="form-control" id="get-apartamento-venta"></div>
+            <div style="margin-top: 1rem;">
+                <button class="btn btn-primary" id="create-sale">Crear</button>
+            </div>
+        </form>
+        <!-- crear rol -->
+        <h2 class="mt-5">CREAR ROL</h2>
+        <form class="w-50">
+            <div>
+                <label for="nombre-rol">Nombre Rol</label>
+                <input type="text" class="form-control" id="nombre-rol" placeholder="Nombre Rol">
+            </div>
+            <div>
+                <label for="descripcion-rol">Descripcion Rol</label>
+                <input type="text" class="form-control" id="descripcion-rol" placeholder="Descripcion Rol">
+            </div>
+            <div style="margin-top: 1rem;">
+                <button class="btn btn-primary" id="create-rol">Crear</button>
+            </div>
+        </form>
+        <!-- crear cartera -->
+        <h2 class="mt-5">CREAR CARTERA</h2>
+        <form class="w-50">
+            <div class="form-control" id="get-client"></div>
+            <div class="form-control">
+                <label for="total-price">Precio Total</label>
+                <input type="text" class="form-control" id="total-price" placeholder="Precio Total">
+            </div>
+            <div class="form-control">
+                <label for="abono-actual">Abono Actual</label>
+                <input type="text" class="form-control" id="abono-actual" placeholder="Abono Actual">
+            </div>
+            <div class="form-control">
+                <label for="cuotas-acordadas">Cuotas Acordadas</label>
+                <input type="text" class="form-control" id="cuotas-acordadas" placeholder="Cuotas Acordadas">
+            </div>
+            <div style="margin-top: 1rem;">
+                <button class="btn btn-primary" id="create-portfolio">Crear</button>
+            </div>
+        </form>
+        <!-- crear cuota -->
+        <h2 class="mt-5">CREAR CUOTA</h2>
+        <form class="w-50">
+            <div class="form-control" id="get-cartera"></div>
+            <div>
+                <label for="valor-abono">Valor Abono</label>
+                <input type="text" class="form-control" id="valor-abono" placeholder="Valor Abono">
+            </div>
+            <div>
+                <label for="fecha-abono">Fecha Abono</label>
+                <input type="date" class="form-control" id="fecha-abono" placeholder="Fecha Abono">
+            </div>
+            <div style="margin-top: 1rem;">
+                <button class="btn btn-primary" id="create-share">Crear</button>
+            </div>
+        </form>
+
+
+        <!-- notification exitosa-->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        Creacion exitosa.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- notificacion de error -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToastError" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        Error al crear.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../js/registros.js"></script>
+</body>
+</html>

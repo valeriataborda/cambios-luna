@@ -1,0 +1,42 @@
+version: '3.8'
+# crea mi archivo docker-compose.yml para node y mysql y que mysql tambien lo conecte con un volumen y que tambien pueda abrir mysql en phpmyadmin
+services:
+  # app-SAVJ:
+  #   build: .
+  #   depends_on:
+  #     - mysqldb
+  #   links:
+  #     - mysqldb
+  #   ports:
+  #     - "3000:3000"
+
+
+  mysqldb:
+    image: mysql:latest
+    container_name: SAVJ-db
+    env_file: ./.env
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_PASSWORD
+      MYSQL_DATABASE: SAVJ-construcciones
+      MYSQL_USER: $DB_USER2
+      MYSQL_PASSWORD: $DB_PASSWORD2
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - $DB_PORT:3306
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin-client
+    depends_on:
+      - mysqldb
+    environment:
+      PMA_HOST: mysqldb
+      MYSQL_ROOT_PASSWORD: 123123
+    ports:
+      - "8080:80"
+volumes:
+  mysql_data:
+
+
+# docker compose up -d

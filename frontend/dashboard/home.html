@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard - Home - SAVJ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <h3>Mis Apartamentos</h3>
+        <ul id="list-proyects">
+            <!-- <li>
+                <h4>Edificio 1</h4>
+                <p>Ubicado en la calle 1 con carrera 1</p>
+                <button>ver estado del proyecto</button>
+            </li> -->
+        </ul>
+
+        <h3>Mis Cateras</h3>
+        <ul>
+            <li>
+                <h4>Cartera 1</h4>
+                <p>Valor: $120.000.000</p>
+                <p>Fecha de inicio: 01/01/2022</p>
+                <p>Fecha de finalización: 01/01/2023</p>
+                <button>ver estado de la cartera y cuotas</button>
+            </li>
+        </ul>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const iduser = urlParams.get('id');
+            if (!iduser) {
+                window.location.href = '../index.html';
+            }
+        });
+    </script>
+
+    <script>
+        // traer el id de la url
+        const urlParams = new URLSearchParams(window.location.search);
+        const iduser = urlParams.get('id');
+
+        const proyectList = document.getElementById('list-proyects');
+
+        fetch(`http://localhost:4500/api/v1/apartaments/${iduser}`)
+            .then(response => response.json())
+            .then(({ data }) => {
+                data.data.forEach(proyect => {
+                    const li = document.createElement('li');
+                    li.className = "";
+
+                    const torre = document.createElement('h4');
+                    torre.textContent = proyect.NOMBRE_PROYECTO;
+
+                    const ubicacion = document.createElement('p');
+                    ubicacion.innerHTML = `<strong>UBICACION:</strong> ${proyect.UBICACION_PROYECTO}`;
+                    
+                    const metraje = document.createElement('p');
+                    metraje.innerHTML = `<strong>TAMAÑO:</strong> ${proyect.METRAJE_APARTAMENTO} MT2`;
+
+                    const piso = document.createElement('p');
+                    piso.innerHTML = `<strong>PISO:</strong> ${proyect.PISO_APARTAMENTO} `;
+
+                    const valor = document.createElement('p');
+                    valor.innerHTML = `<strong>PRECIO:</strong> $${proyect.PRECIO_APARTAMENTO}`;
+
+                    const tipo = document.createElement('p');
+                    tipo.innerHTML = `<strong>TIPO DE APARTAMENTO:</strong> ${proyect.TIPO_APARTAMENTO}`;
+                    
+                    const button = document.createElement('button');
+                    button.classList.add('btn', 'btn-primary');
+                    button.textContent = 'ver estado del proyecto';
+
+                    li.appendChild(torre);
+                    li.appendChild(ubicacion);
+                    li.appendChild(metraje);
+                    li.appendChild(piso);
+                    li.appendChild(valor);
+                    li.appendChild(tipo);
+                    li.appendChild(button);
+
+                    proyectList.appendChild(li);
+                });
+            });
+    </script>
+
+
+
+</body>
+</html>

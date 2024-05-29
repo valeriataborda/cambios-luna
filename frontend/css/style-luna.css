@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#mini-logo{
+    width: 92px;
+    height: 64px;
+}
+nav a{
+   padding-top: 20px; 
+}
+.menu{
+    font-family: muli-bold;
+    font-weight: bold;
+    text-align: center;
+    background-color: #414040;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000000;
+}
+.menu a{
+    font-size: 17px;
+    color: rgb(255, 253, 253);
+}
+.menu a:hover{
+    text-decoration: none;
+}
+.Luna{
+    text-align: center;
+    font-family: muli-bold;
+}
+.boton{
+    width: 90px;
+    height: 30px;
+    border-bottom: 2px;  
+}
+.logo{
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+}
+
+.opciones{
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.contenidouno{
+    width: 65%;
+    height: 2100px;
+    display: inline-block;
+    position: absolute;
+    padding-left: 30px;
+    padding-top: 20px;
+    margin-left: 50px;
+}
+.opciones{
+    text-decoration: none;
+    justify-content: space-between;
+}
+body{
+    background-image: url(/frontend/img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+h1{
+    font-family: muli-bold;
+    font-weight: bold;
+    font-style: normal;
+    margin-top: 20px;
+}
+h2,.boton1,.boton2,.boton3{
+    font-family: muli-bold;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 22px;
+    color: #000000;
+}
+h3{
+    font-family: muli-bold;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 20px;  
+}
+.boton2:hover{
+    padding: 7px 45px 7px 7px;
+    border-style: #000000;
+    background-color: #41404060;
+    text-decoration:dotted;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+.boton1:hover,.boton3:hover{
+    padding: 7px 9px 7px 7px;
+    border-style: #000000;
+    background-color: #41404060;
+    text-decoration:dotted;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+}
+.contenedorsubt{
+    display: flex;
+    background-color: #dee2e66b;
+    border-radius: 30px;
+    height: 200px;
+}
+.contenidoPrincipal{
+    display: grid;
+    place-items: center;
+    margin: auto;
+}
+.subtitulo{
+    padding-top: 10px;
+    height: 48px;
+    width: 33%;
+    padding-left: 15px;
+    padding-bottom: 9px;
+    border-radius: 20px;
+}
+#nombre{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    padding-top: 60px;
+}
+.linea-vertical{
+    height: 27vh;
+    width: 3px;
+    background-color: rgba(65, 65, 65, 0.637);
+    margin-top: 12px;
+}
+.precio p{
+    font-family: muli-bold;
+    font-weight: 500;
+    padding: 70px 0px 2px 30px;
+}
+.precio h3{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    padding: 0px 0px 0px 30px;
+}
+.descripcion{
+    background-color: #dee2e66b;
+    padding: 15px 15px 15px 15px;
+}
+.descripcion p{
+    font-family: muli-bold;
+    font-style: normal;
+    font-size: 20px;
+    color: #000000;
+}
+#conteItemsCarrusel{
+    width: 78%;
+    height: 400px;
+    overflow: hidden;
+}
+.itemCarrusel{
+    height: 400px;
+    position: relative;
+}
+.tarjetaCarrusel{
+    background-color: aqua;
+    height: 100%;
+}
+.flechasCarrusel{
+    position: absolute;
+    top: 0;
+    height: 90%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+#tarjetacarrusel{
+    background-color: #ffffff98;
+    text-align: center;
+}
+.flechasCarrusel a{
+    text-decoration: none;
+}
+i{
+    color: #000000;
+}
